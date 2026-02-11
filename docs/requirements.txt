@@ -1,0 +1,6 @@
+flexcache==0.3
+flexparser==0.4
+numpy==2.4.2
+Pint==0.25.2
+platformdirs==4.5.1
+typing_extensions==4.15.0

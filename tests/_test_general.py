@@ -1,5 +1,8 @@
-from src.envelope import PhysicalQuantity, mu_Xe129, gamma_p
+from src.core import PhysicalQuantity
+
+from src.constants import mu_Xe129, gamma_p
 import numpy as np
+
 solar_mass = PhysicalQuantity(1, 'solar_mass').convert_to('kg').value
 parsec = PhysicalQuantity(1, 'parsec').convert_to('m').value  # 30856775814913673 m
 # 30856775814913673
@@ -7,7 +10,7 @@ parsec = PhysicalQuantity(1, 'parsec').convert_to('m').value  # 3085677581491367
 au = PhysicalQuantity(1, 'au').convert_to('m').value  # 149597870700
 parsecFromAU = au * 648000. / (np.pi)
 oneppm = PhysicalQuantity(1, 'ppm').convert_to('')
-a = 1 + oneppm
+# a = 1 + oneppm
 # print(f'{parsec:22f}')
 # print(f'{parsecFromAU:22f}')
 print(f'{oneppm.value}')

@@ -23,4 +23,4 @@ zip-safe = false
 requires-python = ">=3.9"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/yourrepo"
+Homepage = "https://github.com/Yuzhe98/enphylope"
