@@ -1,6 +1,6 @@
-##########################################
+##############################################
 # for unit management and physical calculation
-##########################################
+##############################################
 
 from pint import UnitRegistry
 from typing import Optional
@@ -154,7 +154,7 @@ class PhysicalQuantity:
         elif isinstance(other, (int, float)):  #
             result = PhysicalQuantity(other * self.value, str(self.unit)).quantity
         else:
-            TypeError(f"Unsupported division with type {type(other)}")
+            TypeError(f"Unsupported multiplication with type {type(other)}")
         return PhysicalQuantity(result.magnitude, str(result.units))
 
     def __rmul__(self, other):
@@ -166,7 +166,7 @@ class PhysicalQuantity:
         elif isinstance(other, (int, float)):  #
             result = PhysicalQuantity(self.value * other, str(self.unit)).quantity
         else:
-            TypeError(f"Unsupported division with type {type(other)}")
+            TypeError(f"Unsupported multiplication with type {type(other)}")
         return PhysicalQuantity(result.magnitude, str(result.units))
 
     def __truediv__(self, other):
@@ -262,7 +262,7 @@ class PhysicalQuantity:
         # If not handled, let NumPy fall back
         return NotImplemented
 
-    def convert_to(self, unit: str)-> "PhysicalQuantity":
+    def convert_to(self, unit: str) -> "PhysicalQuantity":
         """
         Convert the quantity to a new unit.
         :param unit: The new unit as a string
@@ -281,14 +281,14 @@ class PhysicalQuantity:
         return converted_quantity.magnitude
 
 
-def _safe_convert(quantity: Optional[PhysicalQuantity], unit: str) -> Optional[PhysicalQuantity]:
+def _safe_convert(
+    quantity: Optional[PhysicalQuantity], unit: str
+) -> Optional[PhysicalQuantity]:
     """
     convert quantities to a new unit
     return None if the quantity is None
     """
     return quantity.convert_to(unit) if quantity is not None else None
-
-
 
 
 """
