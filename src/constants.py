@@ -1,4 +1,4 @@
-from .core import PhysicalQuantity
+from .enphylope import PhysicalQuantity
 
 # Electron charge
 e = PhysicalQuantity(-1.602176634e-19, "coulomb")
